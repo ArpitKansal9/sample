@@ -10,9 +10,9 @@ public class SampleController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping("/login")
+    @GetMapping("/getUser")
     public String loginUser() {
-        //abc
         return customerService.fetchCustomerDetails();
     }
+
 }
