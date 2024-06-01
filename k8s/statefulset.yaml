@@ -51,8 +51,3 @@ spec:
           name: mysql-persistent-storage
       persistentVolumeClaim:
           claimName: mysql-pvc
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: 500Mi
