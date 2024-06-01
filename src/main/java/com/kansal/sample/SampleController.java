@@ -27,4 +27,23 @@ public class SampleController {
         return customerService.fetchAllCustomerDetails();
     }
 
+    @GetMapping("/fibonacci")
+    public long[] getFibonacci(@RequestParam("n") int n) {
+        long[] fibSequence = new long[n];
+
+        if (n >= 1) {
+            fibSequence[0] = 0;
+        }
+
+        if (n >= 2) {
+            fibSequence[1] = 1;
+        }
+
+        for (int i = 2; i < n; i++) {
+            fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
+        }
+
+        return fibSequence;
+    }
+
 }
