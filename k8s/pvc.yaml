@@ -7,8 +7,10 @@ spec:
     storage: 500Mi
   accessModes:
     - ReadWriteOnce
-  hostPath:
-    path: "/mnt/data" # This path is on the node
+  persistentVolumeReclaimPolicy: Retain
+  awsElasticBlockStore:
+    volumeID: <new-ebs-volume-id> # Ensure this is a new, clean EBS volume
+    fsType: ext4
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
