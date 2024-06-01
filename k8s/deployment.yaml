@@ -24,6 +24,29 @@ spec:
             limits:
               memory: "300Mi"
               cpu: "512m"
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: MYSQL-URL
+            - name: DB_DRIVER
+              valueFrom:
+                configMapKeyRef:
+                  name: mysql-config
+                  key: DB_DRIVER
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-password
+            - name: SPRING_PROFILES_ACTIVE
+              value: "default"
 
 
 
