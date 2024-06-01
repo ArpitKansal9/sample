@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sample-container
-          image: arpitkansal9/sample:3
+          image: arpitkansal9/sample:4
           ports:
             - containerPort: 80
           resources:
