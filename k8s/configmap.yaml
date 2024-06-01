@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: mysql-config
 data:
-  MYSQL_DATABASE: mySQLDatabase
-  MYSQL-URL: jdbc:mysql://mySql:3306/mySQLDatabase
+  MYSQL_DATABASE: database
+  MYSQL-URL: jdbc:mysql://mySql:3306/database
   DB_DRIVER: com.mysql.cj.jdbc.Driver
